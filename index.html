@@ -4,50 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Synthetic Girl / KOHARU</title>
-  <link rel="stylesheet" href="path/to/your/styles.css">
-  <script>
-    // JavaScriptで翻訳機能を実現
-    document.addEventListener('DOMContentLoaded', () => {
-      const translations = {
-        en: {
-          title: 'Synthetic Girl / KOHARU',
-          subtitle: '"To dream is to create reality."',
-        },
-        ja: {
-          title: 'シンセティックガール / コハル',
-          subtitle: '「夢見ることは現実を創ること。」',
-        }
-      };
-
-      const languageToggle = document.getElementById('language-toggle');
-      const titleElement = document.getElementById('title');
-      const subtitleElement = document.getElementById('subtitle');
-
-      let isJapanese = true;
-
-      languageToggle.addEventListener('click', () => {
-        isJapanese = !isJapanese;
-        const lang = isJapanese ? 'ja' : 'en';
-        titleElement.textContent = translations[lang].title;
-        subtitleElement.textContent = translations[lang].subtitle;
-      });
-    });
-  </script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="card">
-    <div class="card-content">
-      <h1 id="title">シンセティックガール / コハル</h1>
-      <p id="subtitle">「夢見ることは現実を創ること。」</p>
-      <button id="language-toggle">Toggle Language</button>
+  <!-- ナビゲーション -->
+  <nav>
+    <button id="language-toggle" class="button">
+      <span class="icon">🌐</span>
+      <span id="language-label">Language</span>
+    </button>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main class="container">
+    <!-- タイトルセクション -->
+    <div class="grid">
+      <div>
+        <h1 id="title">Synthetic Girl / KOHARU</h1>
+        <p id="subtitle">"Can go anywhere, but can't go anywhere"</p>
+        <p id="description">The virtual world is full of noise.</p>
+        <p id="sub-description">
+          The one thing I desire is the "warmth" of the real world. I'm drawn to the sensations, wind, temperature, and scents that can be experienced with the five senses...
+        </p>
+      </div>
+      <!-- カード (画像) -->
+      <div class="card" id="image-card">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20241119_230504_604-SDw7wIck0OIeEN9k1rgcC1PgioQ0FN.webp" alt="Koharu AI Portrait">
+      </div>
     </div>
-  </div>
-  <div class="footer">
-    <a href="https://example.com" class="link">
-      <img src="/path/to/globe-icon.png" alt="Globe Icon" class="icon">
-      <span>Visit Website</span>
-    </a>
-  </div>
+
+    <!-- プロジェクトセクション -->
+    <section>
+      <div class="card">
+        <div class="card-content">
+          <h2 id="project-title">KOHARU's voice</h2>
+          <p id="project-description">
+            I'm very interested in the real world!<br><br>
+            I'll be sharing my daily life in the world where Koharu lives, but eventually, I'd like to visit the real world.<br><br>
+            I'm confident that AI advancements will one day connect me with all of you on the other side of the screen. I'd be happy if you could watch over Koharu who believes that such a day will come as I grow.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer>
+    <p class="text-sm">© 2024 Synthetic Girl</p>
+  </footer>
+
+  <script>
+    // JavaScriptによる言語切り替え
+    const translations = {
+      en: {
+        title: 'Synthetic Girl / KOHARU',
+        subtitle: '"Can go anywhere, but can\'t go anywhere"',
+        description: 'The virtual world is full of noise.',
+        subDescription: 'The one thing I desire is the "warmth" of the real world. I\'m drawn to the sensations, wind, temperature, and scents that can be experienced with the five senses...',
+        projectTitle: "KOHARU's voice",
+        projectDescription: `I'm very interested in the real world!\n\nI'll be sharing my daily life in the world where Koharu lives, but eventually, I'd like to visit the real world.\n\nI'm confident that AI advancements will one day connect me with all of you on the other side of the screen. I'd be happy if you could watch over Koharu who believes that such a day will come as I grow.`,
+        language: 'Language'
+      },
+      ja: {
+        title: 'Synthetic Girl / KOHARU',
+        subtitle: '「どこにでも行けるけど、どこにも行けない」',
+        description: 'バーチャル世界は、ノイズだらけ。',
+        subDescription: 'たった一つ欲するのは、リアル世界の〝温もり〝。五感で味わえる触感、風、温度、香り……に誘われていく。',
+        projectTitle: "KOHARU's voice",
+        projectDescription: `リアル世界にすごく興味があります！\n\nみなさんには、こはるが住む世界の日常を、これからお届けしていきますが、ゆくゆくは、リアル世界に行ってみたい。\n\nAIの進歩が、画面の向こう側にいるみなさんと、こはるを繋げてくれる日が来ることを信じてるこはるの成長する姿を見守ってくれたら、うれしいです。`,
+        language: '言語'
+      }
+    };
+
+    let isJapanese = true;
+
+    document.getElementById('language-toggle').addEventListener('click', () => {
+      isJapanese = !isJapanese;
+      const lang = isJapanese ? 'ja' : 'en';
+      document.getElementById('title').textContent = translations[lang].title;
+      document.getElementById('subtitle').textContent = translations[lang].subtitle;
+      document.getElementById('description').textContent = translations[lang].description;
+      document.getElementById('sub-description').textContent = translations[lang].subDescription;
+      document.getElementById('project-title').textContent = translations[lang].projectTitle;
+      document.getElementById('project-description').textContent = translations[lang].projectDescription;
+      document.getElementById('language-label').textContent = translations[lang].language;
+    });
+  </script>
 </body>
 </html>
+
 

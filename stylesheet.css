@@ -1,0 +1,149 @@
+/* 全体のスタイル */
+body {
+  font-family: sans-serif, Arial, "Helvetica Neue";
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  color: #333333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ナビゲーションバー */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 16px;
+}
+
+/* メインのコンテンツ */
+main {
+  padding-top: 96px;
+  padding-bottom: 64px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #333333;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333333;
+}
+
+p {
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* カード */
+.card {
+  background-color: #ffffff;
+  border: 4px solid #000000;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-content p {
+  margin-bottom: 16px;
+}
+
+/* ハートアニメーション */
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+.animate-fade-out {
+  animation: fade-out 1s ease-out forwards;
+}
+
+/* ボタン */
+button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+button:hover {
+  color: #0056b3;
+}
+
+button .icon {
+  margin-right: 8px;
+}
+
+/* フッター */
+footer {
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 16px 0;
+}
+
+footer .text-sm {
+  font-size: 0.875rem;
+  color: #666666;
+}
